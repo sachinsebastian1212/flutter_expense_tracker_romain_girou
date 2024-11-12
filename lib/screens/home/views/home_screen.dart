@@ -8,11 +8,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(CupertinoIcons.home),label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(CupertinoIcons.graph_square_fill),label: 'Stats')
-        
-      ]),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(30)
+        ),
+        child: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 3,
+          items: const [
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.home),label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(CupertinoIcons.graph_square_fill),label: 'Stats')
+          
+        ]),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const FloatingActionButton(onPressed: null,
+      shape: CircleBorder(),
+      child: Icon(CupertinoIcons.add),
+      ),
     );
   }
 }
