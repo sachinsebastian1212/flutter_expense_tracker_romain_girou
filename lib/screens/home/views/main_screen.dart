@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -10,12 +11,22 @@ class MainScreen extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.yellow[700]),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.yellow[700]),
+                  ),
+                  Icon(
+                    CupertinoIcons.person_fill,
+                    color: Colors.yellow[900]
+                  )
+                ],
               ),
               const SizedBox(width: 8),
               Column(
@@ -37,6 +48,11 @@ class MainScreen extends StatelessWidget {
                   ),
                 ],
               )
+            ,
+            const Spacer(),
+            IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.settings),
+            
+            )
             ],
           )
         ],
