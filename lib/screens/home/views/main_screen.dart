@@ -57,7 +57,7 @@ class MainScreen extends StatelessWidget {
           const SizedBox(height: 20),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2,
+            height: MediaQuery.of(context).size.height / 4,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
                   Theme.of(context).colorScheme.primary,
@@ -201,21 +201,58 @@ class MainScreen extends StatelessWidget {
           const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
-              itemCount: 1,
+              itemCount: 3,
               itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 30,
-                        height: 30,
-                        decoration: const BoxDecoration(color: Colors.yellow),
-                      )
-                    ],
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: const BoxDecoration(
+                                color: Colors.yellow, shape: BoxShape.circle),
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            'Food',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Theme.of(context).colorScheme.onSurface),
+                          ),
+                          const Spacer(),
+                          Column(
+                            children: [
+                              Text(
+                                '-\$45.00',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface),
+                              ),
+                              Text(
+                                'Today',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color:
+                                        Theme.of(context).colorScheme.outline),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 );
               },
