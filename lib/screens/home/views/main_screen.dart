@@ -201,7 +201,7 @@ class MainScreen extends StatelessWidget {
           const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
-              itemCount: 3,
+              itemCount: 6,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 16.0),
@@ -214,11 +214,21 @@ class MainScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: Row(
                         children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: const BoxDecoration(
-                                color: Colors.yellow, shape: BoxShape.circle),
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                    color: Colors.yellow[700], 
+                                    shape: BoxShape.circle),
+                              ),
+                              Icon(
+                                Icons.food_bank,
+                                color: Colors.white,
+                              )
+                            ],
                           ),
                           const SizedBox(width: 12),
                           Text(
